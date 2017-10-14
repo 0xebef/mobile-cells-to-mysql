@@ -1,0 +1,22 @@
+CREATE TABLE `cells` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `radio` varchar(4) NOT NULL,
+  `mcc` smallint(5) unsigned NOT NULL,
+  `net` smallint(5) unsigned NOT NULL,
+  `area` smallint(5) unsigned NOT NULL,
+  `cell` int(10) unsigned NOT NULL,
+  `unit` smallint(5) unsigned DEFAULT NULL,
+  `lon` double NOT NULL,
+  `lat` double NOT NULL,
+  `range` smallint(5) unsigned NOT NULL,
+  `samples` int(10) unsigned NOT NULL,
+  `changeable` tinyint(3) unsigned NOT NULL,
+  `created` int(11) NOT NULL,
+  `updated` int(11) NOT NULL,
+  `averageSignal` smallint(6) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `cells_area__ix` (`area`),
+  KEY `cells_cell__ix` (`cell`),
+  KEY `cells_mcc__ix` (`mcc`),
+  KEY `cells_net__ix` (`net`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
